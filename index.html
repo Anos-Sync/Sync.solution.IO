@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Boutique Simple Gratuite</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f0f0;
+      margin: 0; padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      background-color: #0077cc;
+      color: white;
+      padding: 1.5rem 0;
+      width: 100%;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    main {
+      max-width: 700px;
+      width: 100%;
+      padding: 2rem;
+      background: white;
+      box-shadow: 0 0 10px #ccc;
+      margin: 2rem 1rem;
+      border-radius: 10px;
+    }
+    .product {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      align-items: center;
+    }
+    .product-name {
+      font-weight: bold;
+    }
+    button {
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+    #message {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background-color: #d4edda;
+      border: 1px solid #c3e6cb;
+      border-radius: 8px;
+      color: #155724;
+      display: none;
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<header>Boutique Simple Gratuite</header>
+
+<main>
+  <div class="product">
+    <div class="product-name">Clé Steam - 12€</div>
+    <button onclick="acheter('Clé Steam', 12)">Acheter</button>
+  </div>
+  <div class="product">
+    <div class="product-name">Script Lua - 15€</div>
+    <button onclick="acheter('Script Lua', 15)">Acheter</button>
+  </div>
+  <div class="product">
+    <div class="product-name">Pack Textures HD - 8€</div>
+    <button onclick="acheter('Pack Textures HD', 8)">Acheter</button>
+  </div>
+
+  <div id="message"></div>
+</main>
+
+<script>
+  function acheter(nomProduit, prix) {
+    const msg = document.getElementById('message');
+    msg.style.display = 'block';
+    msg.textContent = `Merci pour votre achat de "${nomProduit}" à ${prix}€. (Paiement simulé)`;
+    setTimeout(() => {
+      msg.style.display = 'none';
+    }, 4000);
+  }
+</script>
+
+</body>
+</html>
